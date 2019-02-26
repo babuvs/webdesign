@@ -1,0 +1,22 @@
+<button class="bg-dark m-2 btn-success" (click)="navigating()">add</button>
+<table class="table mt-2">
+  <thead>
+      <th> id </th>
+      <th> name </th>
+      <th>branch </th>
+      <th> batch </th>
+      <th> Actions </th>
+  </thead>
+  <tbody *ngIf="students && students.length > 0">
+    <tr class="stripped-table" *ngFor="let student of students; let i= index;">
+        <td> {{i+1}}</td>
+        <td> {{student.name}} </td>
+        <td> {{student.branch}} </td>
+        <td> {{student.batch}} </td>
+        <td><i class="fa fa-pencil m-2" (click)="edit(student._id)"></i> 
+          <i class="fa fa-trash m-2" (click)="delete(student._id)"></i> 
+        </td>
+    </tr>
+      
+  </tbody>
+</table>
