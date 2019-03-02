@@ -50,11 +50,11 @@ export class StudentcreateEditComponent implements OnInit, OnDestroy {
     const data = this.student.value;
     if(this.isedit) {
       this.studservice.update(data, this.index).subscribe((res:HttpResponse<any>)=> {
-        this.route.navigate(['student']);
+        this.route.navigate(['students']);
       },(res: HttpErrorResponse) => this.error(res))
     } else {
       this.studservice.create(data).subscribe((res:HttpResponse<any>)=> {
-        this.route.navigate(['student']);
+        this.route.navigate(['students']);
       },(res: HttpErrorResponse) => this.error(res))
     }
     this.studservice.setStudents(this.students);
